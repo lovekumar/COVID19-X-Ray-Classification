@@ -1,0 +1,100 @@
+
+
+SPARK_CONFIG:
+    spark.executor.instances: 2
+
+SPARK_LOG_LEVEL: WARN
+SPARK_MASTER:
+    master.url: local[*]
+    #master.url: spark://localhost:7077
+
+dataset_resize:
+    python_class: 'dataset_resize'
+    job_config_map:
+        input_base_path: ./dataset/COVID-19
+        folders: ['covid','normal','Pneumonia']
+        output_base_path: ./dataset_resized/COVID-19
+        resize_to: 256
+
+InceptionV3_binary_classification:
+    python_class: 'classification'
+    job_config_map:
+        dataset_path: ./dataset_resized/COVID-19
+        folders: ['covid','normal']
+        confusion_matrix: 'Images/InceptionV3_binary_confusion_matrix.png'
+        feature_model: 'InceptionV3'
+
+InceptionV3_multiclass_classification:
+    python_class: 'classification'
+    job_config_map:
+        dataset_path: ./dataset_resized/COVID-19
+        folders: ['covid','normal','Pneumonia']
+        confusion_matrix: 'Images/InceptionV3_multi_confusion_matrix.png'
+        feature_model: 'InceptionV3'
+
+
+ResNet50_binary_classification:
+    python_class: 'classification'
+    job_config_map:
+        dataset_path: ./dataset_resized/COVID-19
+        folders: ['covid','normal']
+        confusion_matrix: 'Images/Resnet50_binary_confusion_matrix.png'
+        feature_model: 'ResNet50'
+
+ResNet50_multiclass_classification:
+    python_class: 'classification'
+    job_config_map:
+        dataset_path: ./dataset_resized/COVID-19
+        folders: ['covid','normal','Pneumonia']
+        confusion_matrix: 'Images/Resnet50_multi_confusion_matrix.png'
+        feature_model: 'ResNet50'
+
+VGG16_binary_classification:
+    python_class: 'classification'
+    job_config_map:
+        dataset_path: ./dataset_resized/COVID-19
+        folders: ['covid','normal']
+        confusion_matrix: 'Images/VGG16_binary_confusion_matrix.png'
+        feature_model: 'VGG16'
+
+VGG16_multiclass_classification:
+    python_class: 'classification'
+    job_config_map:
+        dataset_path: ./dataset_resized/COVID-19
+        folders: ['covid','normal','Pneumonia']
+        confusion_matrix: 'Images/VGG16_multi_confusion_matrix.png'
+        feature_model: 'VGG16'
+
+VGG19_binary_classification:
+    python_class: 'classification'
+    job_config_map:
+        dataset_path: ./dataset_resized/COVID-19
+        folders: ['covid','normal']
+        confusion_matrix: 'Images/VGG19_binary_confusion_matrix.png'
+        feature_model: 'VGG19'
+
+VGG19_multiclass_classification:
+    python_class: 'classification'
+    job_config_map:
+        dataset_path: ./dataset_resized/COVID-19
+        folders: ['covid','normal','Pneumonia']
+        confusion_matrix: 'Images/VGG19_multi_confusion_matrix.png'
+        feature_model: 'VGG19'
+
+
+Xception_binary_classification:
+    python_class: 'classification'
+    job_config_map:
+        dataset_path: ./dataset_resized/COVID-19
+        folders: ['covid','normal']
+        confusion_matrix: 'Images/Xception_binary_confusion_matrix.png'
+        feature_model: 'Xception'
+
+Xception_multiclass_classification:
+    python_class: 'classification'
+    job_config_map:
+        dataset_path: ./dataset_resized/COVID-19
+        folders: ['covid','normal','Pneumonia']
+        confusion_matrix: 'Images/Xception_multi_confusion_matrix.png'
+        feature_model: 'Xception'
+

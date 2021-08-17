@@ -1,0 +1,20 @@
+name: team11-pyspark
+dependencies:
+  - python==3.7
+  - pip:
+    - py4j
+    - findspark
+    - tensorflow==1.15.0
+    - keras==2.2.5
+    - Pillow
+    - pandas
+    - matplotlib
+    - jupyter
+    - scikit-learn
+    - scipy
+    - seaborn
+    - pytest-spark >=0.4.4
+    - pyspark ==2.4.0
+    - pytest-cov
+    - torchvision==0.8.1
+    - torch==1.7.0
