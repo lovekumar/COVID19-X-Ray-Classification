@@ -3,7 +3,7 @@
 This project is completed as part of [CSE-6250](http://sunlab.org/teaching/cse6250/fall2020/) curriculum.
 
 ## Project Members
-* Amit, Arnab, Syamala, Love
+* Amit Tripathy, Arnab Som, Syamala Bandi, Love Kumar
 
 ## Description
 X-ray image classification is a very important task for clinical tasks.
